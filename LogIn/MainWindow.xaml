@@ -1,0 +1,10 @@
+﻿<Window x:Class="LogIn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:logIn="clr-namespace:LogIn"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <logIn:LoginControl x:Name="_loginControl"/>
+    </Grid>
+   
+</Window>
