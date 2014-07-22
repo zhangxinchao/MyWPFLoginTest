@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+  <ServicesConfig type="UBS.Core.LaunchPadGUI.ServicesConfig"  UseLocalList="false" ShowTestLinks="false" DownloadTimeOut="30000">
+
+    <!-- Hong Kong R4 -->
+    <EnvironmentConfig Name="Hong Kong R4" AppId="sapp_hk">
+      <!-- domain in hkg or domain with no environment config will go to HK -->
+      <DnsSuffix>hkg.swissbank.com,swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <!-- Accepts multiple urls - will round-robin the services on error -->
+        <Url> http://hkg1sapp142.hkg:16060/AuthenticationService</Url>
+        <Url> http://hkg2sapp246.hkg:16064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <!-- Accepts multiple urls - will round-robin the services on error -->
+        <Url> http://hkg1sapp142.hkg:16070/LaunchService</Url>
+        <Url> http://hkg2sapp246.hkg:16074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <!-- Accepts multiple urls - will round-robin the services on error -->
+        <Url> http://hkg1sapp141.hkg:16000/DIRT</Url>
+        <Url> http://hkg2sapp242.hkg:16054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+    <!-- Japan -->
+    <EnvironmentConfig Name="Japan Production" AppId="sapp_jp">
+      <DnsSuffix>tky.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url>http://tky1sapp101.tky.swissbank.com:30060/AuthenticationService</Url>
+        <Url>http://tky1sapp201.tky.swissbank.com:30064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url>http://tky1sapp101.tky.swissbank.com:30070/LaunchService</Url>
+        <Url>http://tky1sapp201.tky.swissbank.com:30074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url>http://tky1sapp101.tky.swissbank.com:30000/DIRT</Url>
+        <Url>http://tky1sapp201.tky.swissbank.com:30054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+    <EnvironmentConfig Name="Japan HV" AppId="sapp_hvjp">
+      <DnsSuffix>tky.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url>http://tky1sapp201.tky.swissbank.com:16060/AuthenticationService</Url>
+        <Url>http://tky1sapp101.tky.swissbank.com:16064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url>http://tky1sapp201.tky.swissbank.com:16070/LaunchService</Url>
+        <Url>http://tky1sapp101.tky.swissbank.com:16074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url>http://tky1sapp201.tky.swissbank.com:16000/DIRT</Url>
+        <Url>http://tky1sapp101.tky.swissbank.com:16054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+    <!-- Australia Production Sydney -->
+    <EnvironmentConfig Name="Australia R4" AppId="sapp_au">
+      <DnsSuffix>syd.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url>http://xsyd2147pap.syd.swissbank.com:33060/AuthenticationService</Url>
+        <Url>http://xsyd2146pap.syd.swissbank.com:33064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url>http://xsyd2147pap.syd.swissbank.com:33070/LaunchService</Url>
+        <Url>http://xsyd2146pap.syd.swissbank.com:33074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url>http://xsyd2147pap.syd.swissbank.com:33000/DIRT</Url>
+        <Url>http://xsyd2146pap.syd.swissbank.com:33054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+    <!-- Singapore -->
+    <EnvironmentConfig Name="Singapore R4" AppId="sapp_sg">
+      <DnsSuffix>sng.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url>http://sng1sapp104.sng.swissbank.com:16060/AuthenticationService</Url>
+        <Url>http://sng1sapp204.sng.swissbank.com:16064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url>http://sng1sapp104.sng.swissbank.com:16070/LaunchService</Url>
+        <Url>http://sng1sapp204.sng.swissbank.com:16074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url>http://sng1sapp104.sng.swissbank.com:16000/DIRT</Url>
+        <Url>http://sng1sapp204.sng.swissbank.com:16054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+    <!-- Taiwan R4 -->
+    <EnvironmentConfig Name="Taiwan R4" AppId="sapp_tw">
+      <DnsSuffix>tai.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url> http://xtai0092pap.tai.swissbank.com:30060/AuthenticationService</Url>
+        <Url> http://xtai0093pap.tai.swissbank.com:30064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url> http://xtai0092pap.tai.swissbank.com:30070/LaunchService</Url>
+        <Url> http://xtai0093pap.tai.swissbank.com:30074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url> http://xtai0092pap.tai.swissbank.com:30000/DIRT</Url>
+        <Url> http://xtai0093pap.tai.swissbank.com:30054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+
+    <!-- Korea R4 -->
+    <EnvironmentConfig Name="Korea R4" AppId="sapp_kr">
+      <DnsSuffix>seo.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url> http://xseo2034pap.seo.swissbank.com:30060/AuthenticationService</Url>
+        <Url> http://xseo2031pap.seo.swissbank.com:30064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url> http://xseo2034pap.seo.swissbank.com:30070/LaunchService</Url>
+        <Url> http://xseo2031pap.seo.swissbank.com:30074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url> http://xseo2032pap.seo.swissbank.com:30000/DIRT</Url>
+        <Url> http://xseo2033pap.seo.swissbank.com:30054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+
+    <!-- Malaysia R4 -->
+    <EnvironmentConfig Name="Malaysia R4" AppId="sapp_my">
+      <DnsSuffix>klp.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url> http://xklp1006pap.klp.swissbank.com:30060/AuthenticationService</Url>
+        <Url> http://xklp1007pap.klp.swissbank.com:30064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url> http://xklp1006pap.klp.swissbank.com:30070/LaunchService</Url>
+        <Url> http://xklp1007pap.klp.swissbank.com:30074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url> http://xklp1006pap.klp.swissbank.com:30000/DIRT</Url>
+        <Url> http://xklp1007pap.klp.swissbank.com:30054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+
+
+    <!-- India Production -->
+    <EnvironmentConfig Name="India R4" AppId="sapp_in">
+      <!-- domain in hkg or domain with no environment config will go to HK -->
+      <DnsSuffix>hyd.swissbank.com</DnsSuffix>
+      <ServiceLocation ServiceName="Authentication">
+        <Url> http://xhyd1010pap.hyd.swissbank.com:30060/AuthenticationService</Url>
+        <Url> http://xhyd1014pap.hyd.swissbank.com:30064/AuthenticationService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="SoftwareUpdate">
+        <Url> http://xhyd1010pap.hyd.swissbank.com:30070/LaunchService</Url>
+        <Url> http://xhyd1014pap.hyd.swissbank.com:30074/LaunchService</Url>
+      </ServiceLocation>
+      <ServiceLocation ServiceName="Config">
+        <Url> http://xhyd1010pap.hyd.swissbank.com:30000/DIRT</Url>
+        <Url> http://xhyd1014pap.hyd.swissbank.com:30054/DIRT</Url>
+      </ServiceLocation>
+    </EnvironmentConfig>
+  </ServicesConfig>
+
+
+

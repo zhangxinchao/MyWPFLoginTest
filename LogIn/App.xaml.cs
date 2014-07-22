@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml.Serialization;
 
 namespace LogIn
 {
@@ -16,28 +18,19 @@ namespace LogIn
         private void App_Startup(object sender, StartupEventArgs e)
         {
             MainWindow window = new MainWindow();
-          
-            var viewModel = new LoginViewModel();
-            var envList = new ServiceConfig[]
+
+            ServicesConfig ans;
+            using (System.IO.FileStream fs = System.IO.File.Open("Environments.xml", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
-                new ServiceConfig
-                {
-                    EnvironmentName = "hk_dev4",
-                    AuthenticationUrl = "localhost"
-                },
-                 new ServiceConfig
-                {
-                    EnvironmentName = "hk_prep1",
-                    AuthenticationUrl = "localhost"
-                }
-                ,
-                new ServiceConfig
-                {
-                    EnvironmentName = "jp_prep1",
-                    AuthenticationUrl = "localhost"
-                }
-            };
-            viewModel.Environments = envList;
+                XmlSerializer ser = new XmlSerializer(typeof(ServicesConfig));
+                ans = ser.Deserialize(fs) as ServicesConfig;
+            }
+
+
+            var viewModel = new LoginViewModel();
+            viewModel.Environments = ans;
+           
+   
             window.SetViewModel(viewModel);
             window.Show();
         }

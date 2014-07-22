@@ -10,7 +10,7 @@ namespace LogIn
     {
         private readonly UserCredential _sapphireUser;
         private readonly UserCredential _momsUser;
-        private  IList<ServiceConfig> _environments;
+        private ServicesConfig _environments;
 
         public LoginViewModel()
         {
@@ -19,7 +19,7 @@ namespace LogIn
             _momsUser = new UserCredential();
         }
 
-        public IList<ServiceConfig> Environments
+        public ServicesConfig Environments
         {
             get { return _environments; }
             set { this._environments = value; }
@@ -82,7 +82,7 @@ namespace LogIn
 
         public ICommand Login { get { return new LoginCommand(_sapphireUser, _momsUser); } }
 
-        public ServiceConfig ChoosenEnvironment
+        public EnvironmentConfig ChoosenEnvironment
         {
             get { return _choosen; }
             set
@@ -92,6 +92,6 @@ namespace LogIn
             }
         }
 
-        private ServiceConfig _choosen;
+        private EnvironmentConfig _choosen;
     }
 }

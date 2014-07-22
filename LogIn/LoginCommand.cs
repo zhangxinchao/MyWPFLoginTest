@@ -19,7 +19,7 @@ namespace LogIn
         }
         public void Execute(object parameter)
         {
-            var env = parameter as ServiceConfig;
+            var env = parameter as EnvironmentConfig;
 
         }
 
